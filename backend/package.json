@@ -1,0 +1,25 @@
+{
+  "name": "pontocerto_back",
+  "version": "1.0.0",
+  "description": "backed of Ponto Certo App",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./server.js",
+    "test:integration": "SET NODE_ENV=test & mocha --opts test/integration/mocha.opts test/integration/**/*_spec.js",
+    "test:unit": "SET NODE_ENV=test & mocha --opts test/unit/mocha.opts test/unit/**/*_spec.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Grupo i9",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-node6": "^11.0.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
