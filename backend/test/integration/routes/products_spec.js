@@ -1,19 +1,28 @@
-describe('Routes: Products',()=>{
-    const defaultProduct={
-        name:'Default product',
-        description:'product description',
-        price:100
+describe('Routes: Products', () => {
+
+    let request;
+    before(() => {
+        return setupApp()
+            .then(app => {
+                request = supertest(app)
+            })
+    });
+
+    const defaultProduct = {
+        name: 'Default product',
+        description: 'product description',
+        price: 100
     };
 
-    describe('GET /products',()=>{
-        it('shoud return a list of products',done=>{
+    describe('GET /products', () => {
+        it('shoud return a list of products', done => {
 
             request
-            .get('/products')
-            .end((err,res)=>{
-                expect(res.body[0]).to.eql(defaultProduct); 
-                done(err);
-            });
+                .get('/products')
+                .end((err, res) => {
+                    expect(res.body[0]).to.eql(defaultProduct);
+                    done(err);
+                });
         });
     });
 });
