@@ -1,7 +1,4 @@
 import setupApp from './src/app';
-import auth from './src/sevice/sptransAuth';
-
-auth.auth();
 
 let port = 3000;
 
