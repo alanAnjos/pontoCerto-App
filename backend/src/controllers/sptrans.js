@@ -8,7 +8,8 @@ class SpTransController {
         return request.post({url:uri,jar:cookiejar}, (error, response, body) => {
             let uri = 'http://api.olhovivo.sptrans.com.br/v2.1/Parada/Buscar?termosBusca=' + filter;
             request.get({url:uri,jar:cookiejar}, (error, response, body) => {
-                res.send(body);
+                var jsonResp = JSON.parse(body);
+                res.send(jsonResp[0]); //returns only the first element to simulate a filter
             })
         })
     }
